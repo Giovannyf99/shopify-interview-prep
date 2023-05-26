@@ -26,12 +26,12 @@ const Nasacard = () => {
             const wordResponse = await axios.get(`https://api.api-ninjas.com/v1/planets?name=`, {
                 params: {
                     query: word,
-                    client_id: 'IJ34KrPvsnf7jJJLm+5QRw==eAQxBqm6GJmASbXR',
+                    api_key: 'IJ34KrPvsnf7jJJLm+5QRw==eAQxBqm6GJmASbXR',
                 }
             });
             const wordData = wordResponse.data[0];
             setTitle(wordData.word);
-            setPeriod(wordData.period);
+            setPeriod(wordData.period[0]);
             setTemperature(wordData.temperature[0]);
             setMass(wordData.mass[0]);
 
